@@ -1,0 +1,108 @@
+<html>
+    <head> 	
+        <title>Effects in jQuery - Part 1</title> 
+        <link rel="stylesheet" href="/jquery-core-basics/14-jquery/css/style.css">
+    </head>
+    
+    <body>
+        <!-- observe here, no onclick attribute provided here-->
+        <div id="myEffectButtons" class="jQueryEffects">
+            <button id="btnHide">Hide</button>
+            <button id="btnShow">Show</button>
+            <button id="btnToggleShowHide">Show-Hide-Toggle</button>
+        
+            <button id="btnFadeOut">Fade Out</button>
+            <button id="btnFadeIn">Fade In</button>
+            <button id="btnFadeToggle">Fade Toggle</button>
+            
+            <button id="btnSlideUp">Slide Up</button>
+            <button id="btnSlideDown">Slide Down</button>
+            <button id="btnSlideToggle">Slide Toggle</button>
+        </div>
+
+        <h1>Introduction to jQuery</h1>
+        <p>paragraph 0 - Title</p>
+        <p>Paragraph 1 - Author</p>
+
+        <div id="firstDiv" class="introDiv">
+            <p>Paragraph 2 - Preface</p>
+            <p>Paragraph 3 - Synopsis</p>
+            <p>Paragraph 4 - Thanksgiving</p>
+        </div><br>
+
+        <div id="secondDiv" class="introDiv">
+            <p>Paragraph 5 - Index & Table of Content</p>
+            <p>Paragraph 6 - Content</p>
+        </div><br>
+
+        <div id="thirdDiv" class="introDiv">
+            <p>Paragraph 7 - Story</p>            
+        </div><br>
+
+        <ul class="introDiv" id="list1">
+            <h4>
+            <li>List0 Item0 - Selectors</li>
+            <li>List0 Item1 - Effects </li>
+            <li>List0 Item2 - Animation</li>      
+            <li>List0 Item3 - Events</li>      
+            </h4>
+        </ul><br>
+
+        <ul>
+            <li>List1 Item-0</li>      
+            <li>List1 Item-1</li>
+            <li>List1 Item-2</li>
+            <li>List1 Item-3</li>         
+        </ul><br><br>        
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        
+    // More about jQuery events on :https://www.w3schools.com/jquery/jquery_events.asp
+
+        $(document).ready(function() {
+
+            // element(buttonId) selector used & upon that element's click event we perform a jQuery "hide()" effect
+            $("#btnHide").click( function() {
+                $("#firstDiv").hide();
+            });
+
+            // element(buttonId) selector used & upon that element's click event we perform a jQuery "show()" effect
+            $("#btnShow").click(function(){
+                $("#firstDiv").show();
+            });
+
+            // toggle() effect is the combination of hide() & show() effect
+            $("#btnToggleShowHide").click(function(){
+                $("#firstDiv").toggle();
+            });
+
+            $("#btnFadeOut").click(function(){
+                $("#secondDiv").fadeOut();
+            });
+
+            $("#btnFadeIn").click(function(){
+                $("#secondDiv").fadeIn();
+            });
+
+            $("#btnFadeToggle").click(function(){
+                $("#secondDiv").fadeToggle();
+            });
+
+            $("#btnSlideUp").click(function(){
+                $("#list1").slideUp();
+            });
+
+            $("#btnSlideDown").click(function(){
+                $("#list1").slideDown();
+            });
+
+            $("#btnSlideToggle").click(function(){
+                $("#list1").slideToggle();
+            });
+            
+        });
+    </script>
+</html>

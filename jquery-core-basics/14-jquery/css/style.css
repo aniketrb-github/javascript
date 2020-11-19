@@ -1,0 +1,35 @@
+#lbl1 {
+    color: blue;
+}
+
+div[class^="subHeadDiv"] {
+    background: #ffff00;
+    color: red;
+    
+  }
+
+.introDiv{
+    border: 2px solid blue;
+    margin: 5px;
+    padding: 10px;
+}
+
+.jQueryEffects{
+    border: 2px solid blue;
+    margin: 5px;
+    padding: 10px;
+}
+
+.geometry{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    opacity: 0.3;
+    position: absolute;
+    padding: 20px;
+}
+
+
+div p{
+    color: red;
+}

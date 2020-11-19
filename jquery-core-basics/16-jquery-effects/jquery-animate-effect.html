@@ -1,0 +1,58 @@
+<html>
+    <head> 	
+        <title>Effects in jQuery - Part 1</title> 
+        <link rel="stylesheet" href="/jquery-core-basics/14-jquery/css/style.css">
+    </head>
+    
+    <body>
+        <!-- observe here, no onclick attribute provided here-->
+        <div id="myEffectButtons" class="jQueryEffects">
+            <button id="btnAnimate">Animate</button>
+            <button id="btnReverse">Reverse</button>
+        </div>
+
+        <h1>Introduction to jQuery</h1>
+        <div id="cube" class="geometry">
+            <p>Helix Cube</p>
+        </div>
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        
+    // More about jQuery events on :https://www.w3schools.com/jquery/jquery_events.asp
+
+        $(document).ready(function() {
+
+            // element(id) # selector used & upon that element's click event we perform a jQuery "hide()" effect
+            $("#btnAnimate").click(function(){
+
+                /*
+                */
+                // $("#cube").animate({}, 1000, callback);
+                $("#cube").animate({
+                    left: '250px',
+                    opacity: '1',
+                    width: '100px',
+                    height: '100px'
+                }, 1000);
+            });
+
+            $("#btnReverse").click(function(){
+
+            /*
+            */
+            // $("#cube").animate({}, 1000, callback);
+            $("#cube").animate({
+                left: '10px',
+                opacity: '0.4',
+                width: '50px',
+                height: '50px'
+            }, 1000);
+            });
+            
+        });
+    </script>
+
+</html>

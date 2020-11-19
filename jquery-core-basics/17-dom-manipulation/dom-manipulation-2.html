@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>DOM Manipulations in jQuery - PART 2</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <!--
+        append: inserts content at the end of the selected element
+        after: inserts content after the selected element
+        prepend: inserts content at the beginning of the selected element
+        before: inserts content before the selected element
+        remove: removes or deletes the html tag from webpage
+        empty: clears the content inside the provided element
+    -->
+    <body>
+        <h3>DOM Manipulations in jQuery</h3>
+        <button id="btnAppend">Apend</button>
+        <button id="btnPrepend">Prepend</button>
+        <button id="btnAfter">After</button>        
+        <button id="btnBefore">Before</button>                
+        <button id="btnEmpty">Empty</button>
+        <button id="btnRemoveDiv">Remove Div</button>
+        <button id="btnRemovePara">Remove Para</button>
+        <button id="btnRemovePara13">Remove Para 1&3</button>
+
+        <div id="div1" class="myDivs">            
+            <p id="p1" class="p1ClassValue" >--- Paragraph-1 from 1st Division ---</p>
+            <p id="p2" class="p2ClassValue" >--- Paragraph-2 from 1st Division ---</p>         
+            <p id="p3" class="p3ClassValue" >--- Paragraph-3 from 1st Division ---</p>         
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // append: adds a new para. inside the div but at the end of the selected para. tag
+            $("#btnAppend").click(function(){
+                $("#div1").append("<p>*** Paragraph-2 from 1st Division ***</p>");
+            });
+
+            // prepend: adds a new para. at the beggining of the selected element(div tag)
+            $("#btnPrepend").click(function(){
+                $("#div1").prepend("<p>*** Paragraph-2 from 1st Division ***</p>");
+            });
+
+            // after: adds a new para. after the selected element(div tag) | outside div tag
+            $("#btnAfter").click(function(){
+                $("#div1").after("<p>*** Paragraph-2 from 1st Division ***</p>");
+            });        
+
+            // before: adds a new para. before the selected element(div tag) | outside div tag
+            $("#btnBefore").click(function(){
+                $("#div1").before("<p>*** Paragraph-2 from 1st Division ***</p>");
+            });
+
+            // remove: removes/deletes the mentioned element from webpage
+            $("#btnRemoveDiv").click(function(){
+                $("#div1").remove();
+            });
+            // remove: removes te para with class: p2ClassValue
+            $("#btnRemovePara").click(function(){
+                $("p").remove(".p2ClassValue"); // using dot(.) selector
+                alert("Paragraph 2 of 1st Div. will be removed");
+            }); 
+
+            // remove: removes te para with class: p2ClassValue
+            $("#btnRemovePara13").click(function(){
+                $("p").remove("#p1, #p3"); // using dot(.) selector
+                alert("Paragraph 1 & 3 of 1st Div. will be removed now");
+            });       
+
+            // empty: just clears the internal html tags of div
+            $("#btnEmpty").click(function(){
+                $("#p1").empty();
+            });
+
+        });
+    </script>
+</html>

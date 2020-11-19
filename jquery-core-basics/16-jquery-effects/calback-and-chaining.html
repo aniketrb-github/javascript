@@ -1,0 +1,57 @@
+<html>
+    <head> 	
+        <title>Callback and Chaining in jQuery</title> 
+        <link rel="stylesheet" href="/jquery-core-basics/14-jquery/css/style.css">
+    </head>
+    
+    <body>
+        <!-- observe here, no onclick attribute provided here-->
+        <div id="myEffectButtons" class="jQueryEffects">
+            <button id="btnCallbackEffect">Callback Effect</button>
+            <button id="btnChainedEffect">Chained Effect Animate</button>
+        </div>
+
+        <div id="thirdDiv" class="introDiv">
+            <h3><p>Callback functions in jQuery</p></h3>          
+            <h3><p>Chaining of functions in jQuery</p></h3>          
+        </div><br>
+
+        <ul class="introDiv" id="list1">
+            <h4>
+            <li>List0 Item0 - Selectors</li>
+            <li>List0 Item1 - Effects </li>
+            <li>List0 Item2 - Animation</li>      
+            <li>List0 Item3 - Events</li>      
+            </h4>
+        </ul><br>
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        
+    // More about jQuery events on :https://www.w3schools.com/jquery/jquery_events.asp
+
+        $(document).ready(function() {
+
+            // CALLBACK FUNCTION
+            // on btnAnimate's click event we want to perform an sliding action effect on #thirdDiv
+            $("#btnCallbackEffect").click(function(){
+                // Here, the function reference 'printMsg' is a callback function
+                $("#thirdDiv").slideToggle(2000, printMsg);
+            });
+
+            // my callback function for slideToggle function; all effects functions have a callback function which is optional for us
+            function printMsg(){
+                alert("Effect executed!");
+            }
+
+            // CHAINING OF FUNCTIONS
+            $("#btnChainedEffect").click(function(){
+                $("#list1").slideToggle(1500).fadeToggle(1500);
+            });
+            
+        });
+    </script>
+
+</html>

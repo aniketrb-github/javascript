@@ -1,0 +1,85 @@
+<html>
+    <head> 	
+        <title>Events in jQuery - Part 1</title> 
+        <link rel="stylesheet" href="/jquery-core-basics/14-jquery/css/style.css">
+    </head>
+    
+    <body>
+        <button id="btnFadeOut">Fade Out</button>
+        <button id="btnVanisher">Vanisher</button><br>
+
+        <h1>Introduction to jQuery</h1>
+        <p>paragraph 0 - Title</p>
+        <p>Paragraph 1 - Author</p>
+
+        <div id="firstDiv" class="introDiv">
+            <p>Paragraph 2 - Preface</p>
+            <p>Paragraph 3 - Synopsis</p>
+            <p>Paragraph 4 - Thanksgiving</p>
+        </div><br>
+
+        <div id="secondDiv" class="introDiv">
+            <p>Paragraph 5 - Index & Table of Content</p>
+            <p>Paragraph 6 - Content</p>
+        </div><br>
+
+        <div id="thirdDiv" class="introDiv">
+            <p>Paragraph 7 - Story</p>            
+        </div><br>
+
+        <ul class="introDiv" id="list1">
+            <li>List0 Item-0</li>
+            <li>List0 Item-1</li>
+            <li>List0 Item-2</li>      
+            <li>List0 Item-3</li>      
+        </ul><br>
+
+        <ul>
+            <li>List1 Item-0</li>      
+            <li>List1 Item-1</li>
+            <li>List1 Item-2</li>
+            <li>List1 Item-3</li>         
+        </ul><br>
+
+        
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        
+    // More about jQuery events on :https://www.w3schools.com/jquery/jquery_events.asp
+
+        $(document).ready(function() {
+
+            // we have removed the attribute onclick="fadeOut()" from the HTML & have used the jquery equivalent event to handle the click event
+            //$("#btnVanisher").click(fadeOut);
+
+            // mouseenter() event 
+            /*$("#btnVanisher").mouseenter( function() {
+                $("#list1").fadeOut(1000); 
+            });
+
+            // mouseenter() event 
+            $("#btnVanisher").mouseleave( function() {
+                $("#list1").fadeIn(1000); 
+            });*/
+
+            $("#btnFadeOut").hover(fadeIn, fadeOut);
+            
+            // here we created an anonymous function inside the click() function
+            /*$("button").dblclick( function() {
+                $("p:even").fadeToggle(1000);
+            });*/
+
+           function fadeOut() {
+                $("p:odd").fadeToggle(1000);
+            }
+
+            function fadeIn() {
+                $("p:odd").fadeOut(1000);
+            }
+            
+        });
+    </script>
+
+</html>

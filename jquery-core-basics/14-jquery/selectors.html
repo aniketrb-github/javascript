@@ -1,0 +1,39 @@
+<html>
+	<head>
+    <title>Selectors in jQuery Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+
+	</head>
+    
+    <body>
+        <h2 class="header" id="lbl1">jQuery Selector Demo</h2><br><br>
+        <button onclick="fadeout()">Fade Out</button>
+        
+        <div class="subHeadDiv">
+            <h2 class="subHead" id="lbl2">Dot operator(.)</h2>
+
+            <h2 class="subHead" id="lbl3">Hash operator(#)</h2>
+
+            <h2 class="subHead" id="lbl4">Some text</h2>
+        </div>  
+        <br><br>
+        <button id="btnFadeToggler" onclick="vanisher()">Fade Toggler</button>
+
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+        // Here, we access an HTML element based on its ID via the hash(#) & then perform an aciton(fadeToggle) over it
+        function fadeout() {
+            $("#lbl1").fadeToggle(1000);
+        }
+
+        // Here, we use the Dot(.)  this helps us to perform an action on group of html elements based on their class attribute
+        function vanisher() {
+            $(".subHead").fadeToggle();
+        }
+    </script>
+
+</html>

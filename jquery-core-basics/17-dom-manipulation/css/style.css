@@ -1,0 +1,15 @@
+.myDivs {
+    border: 2px solid red;
+    margin: 10px;
+    padding: 10px;
+}
+
+.newDivClass {
+    border-radius: 10px;
+    background-color: yellow;
+}
+
+.newParaClass {
+    font-weight: bold;
+    color: blueviolet;
+}

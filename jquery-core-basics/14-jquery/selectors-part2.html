@@ -1,0 +1,77 @@
+<html>
+    <head> 	
+        <title>Selectors in jQuery - Part 2</title> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    
+    <body>
+        <h1>Introduction to jQuery</h1>
+        <p>paragraph - Title</p>
+        <p>Paragraph - Author</p>
+
+        <div id="firstDiv" class="introDiv">
+            <p>Paragraph 1 - Preface</p>
+            <p>Paragraph 2 - Synopsis</p>
+            <p>Paragraph 3 - Thanksgiving</p>
+        </div><br>
+
+        <div id="secondDiv" class="introDiv">
+            <p>Paragraph 4 - Index & Table of Content</p>
+            <p>Paragraph 5 - Content</p>
+        </div><br>
+
+        <div id="thirdDiv" class="introDiv">
+            <p>Paragraph 6 - Story</p>            
+        </div><br>
+
+        <ul class="introDiv">
+            <li>List0 Item-0</li>
+            <li>List0 Item-1</li>
+            <li>List0 Item-2</li>      
+            <li>List0 Item-3</li>      
+        </ul><br>
+
+        <ul>
+            <li>List1 Item-0</li>      
+            <li>List1 Item-1</li>
+            <li>List1 Item-2</li>
+            <li>List1 Item-3</li>         
+        </ul><br>
+
+        <button onclick="fadeOut()">Fade Out</button>
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        
+        /*
+        FadeToggle is just an action for demonstration for Selector demo purpose
+        For more on selectors: https://www.w3schools.com/jquery/jquery_ref_selectors.asp
+        */
+        function fadeOut() {
+            // selector to fade out  entire 'div' tag
+            // $("div").fadeToggle(1000);
+
+            // selector to fade out the entire div tag, also all other paragraph elements from other div tags 
+            //$("#firstDiv, p, .introDiv").fadeToggle(1000);
+
+            // class selector to hide all elements associated or having this tag
+            //$(".introDiv").fadeToggle(1000);
+
+            // selector to hide specific elements(say, paragraph tag) inside a div tags (both are same)
+            // $("div > p").fadeToggle(1000);
+            //$("div p").fadeToggle(1000);
+
+            // selector to fade out very first html element 
+            // $("p:first").fadeToggle(1000);
+
+            // selector to fade out even html elements from list
+            //$("li:even").fadeToggle(1000);
+
+            // selector to fade out odd html elements from list
+            $("li:odd").fadeToggle(1000);
+        }
+    </script>
+
+</html>

@@ -1,0 +1,67 @@
+<html>
+    <head><title>DOM Manipulations in jQuery</title></head>
+    <body>
+        <h3>DOM Manipulations in jQuery</h3>
+        <button id="btnText">text(...)</button>
+        <button id="btnHtml">html(...)</button>
+        <button id="btnAttr1">GET-VALUE-attr(...)</button>
+        <button id="btnAttr2">SET-VALUE-attr(...)</button>
+
+        <button id="btnCss1">GET-CSS</button>
+        <button id="btnCss2">SET-CSS</button>
+
+        <div id="div1" class="myDivs">            
+            <p id="p1" class="p1ClassValue" >Paragraph-1</p>
+
+            <p id="p2" class="p1ClassValue" >Paragraph-2</p>            
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    
+        $(document).ready(function(){
+
+            $("#btnText").click(function(){
+                // text(): simply gets the text content for the given html content              
+                var p1Text = $('#p1').text();
+                alert("We just fetch the text in plain text format from p1 paragraph :"+p1Text);               
+            });
+
+            $("#btnHtml").click(function(){
+                // html(...) - acts as a Setter method & overwrites the existing content of this html element
+                $('#p1').html("New content of the P1 paragraph is set");
+                alert("We just changed the P1 paragraph content!");
+            });
+
+            $("#btnAttr1").click(function(){
+                // using attr() to get the existing attribute values of html elements
+               var classVal = $('#p1').attr("class");
+               alert( "GET p1's 'class' value = "+ classVal );
+            });
+
+            $("#btnAttr2").click(function(){
+                // using attr() to set newvalues to the attributes of the html elements
+                $('#p1').attr("class", "new_p2ClassValue");
+                var classVal = $('#p1').attr("class");
+                alert( "The NEW 'class' value to p1 is = "+ classVal );
+            });
+
+            // using css() to get the existing values
+            $("#btnCss1").click(function(){
+                var fontFamily = $("#p2").css("font-family");
+                var fontSize = $("#p2").css("font-size");
+                var color = $("#p2").css("color");
+                alert("Paragraph2 Details = FontFamily: "+fontFamily+" -- fontSize: "+fontSize+" -- Color: "+color);
+            });
+
+            // Using the css() to set new values at runtime
+            $("#btnCss2").click(function(){
+                $("#p2").css("font-family", "Algerian");
+                $("#p2").css("font-size", "40px");
+                $("#p2").css("color", "red");                
+            });
+
+        });
+    </script>
+</html>

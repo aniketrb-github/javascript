@@ -1,0 +1,26 @@
+<html>
+	<head>
+	<title>jQuery Setup</title>
+	</head>
+    
+    <body>
+        <h2 id="lb1">Setting up jQuery-3.5.1</h2><br>
+        <button id="btnFadeOut" onclick="vanisher()">Fade Out</button><br><br>
+
+        <h3><a href="https://code.jquery.com/jquery-3.5.1.js">Official jQuery website</a></h3>
+    </body>
+    
+    <!-- <script src="\jquery\jquery-lib.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+        
+        function vanisher() {
+        // selector   .actiontoBePerformed
+            $("#lb1").fadeToggle(1000); 
+        // $("lb1") is a jQuery selector which is equivalent to document.getElementById("lb1")
+        // fadeToggle is an action performed on the element we just obtained
+        }
+    </script>
+
+</html>
