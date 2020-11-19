@@ -1,0 +1,24 @@
+<html>
+    <head><title>Radio Button Demo</title></head>
+    <body>
+        <input type="radio" name="genderGrp" id="maleOpt" value="Male">Male</input>
+        <br>
+        <input type="radio" name="genderGrp" id="femaleOpt" value="Female">Female</input>
+        <br><br>
+        <input type="button" id="btnSubmit" value="Submit" onclick="displayGender()">
+
+    </body>
+
+    <script type="text/javascript">
+        function displayGender() {
+            var maleRadioBtn = document.getElementById("maleOpt");
+            var femaleRadioBtn = document.getElementById("femaleOpt");
+            if( maleRadioBtn.checked == true )
+                alert("Your gender is: "+maleRadioBtn.value);
+            else if( femaleRadioBtn.checked == true )
+                alert("Your gender is: "+femaleRadioBtn.value);
+            else 
+                alert("Please select a gender!")
+        }
+    </script>
+</html>

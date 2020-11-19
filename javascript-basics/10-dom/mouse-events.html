@@ -1,0 +1,21 @@
+<html>
+	<head>
+	<title>Mouse Event Demo</title>
+	</head>
+    
+    <body>
+		<img id="img1" src="/pics/javascript.jpg" width="150" height="100" onmouseover="setNewImg()" onmouseout="setOldImg()">			
+		
+	</body>	
+    
+	<script type="text/javascript">
+		function setOldImg() {
+			document.getElementById("img1").src = "/pics/javascript.jpg";
+		}
+
+		function setNewImg() {
+			document.getElementById("img1").src = "/pics/jqueryui-pic.png";
+		}
+    </script>		
+
+</html>

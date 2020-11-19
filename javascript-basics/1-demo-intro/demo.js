@@ -1,0 +1,1 @@
+document.write("<h1>Hello World! . . . from EXTERNAL FILE! </h1>");

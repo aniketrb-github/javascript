@@ -1,0 +1,17 @@
+<html>
+    <head><title>Dom manipulations</title></head>
+    <body>
+        <h2 id="domManId">DOM manipulations demo</h2>
+        <button onclick="btnClick()">Click</button>
+
+    </body>
+
+    <script type="text/javascript">
+        var count = 0;
+        function btnClick () {
+            // alert("You have clicked the button: "+(++count)+" time(s)");
+            var domManId = document.getElementById("domManId").innerHTML="DOM Title updated!";
+            alert("New title: "+domManId+" generated "+(++count)+" time(s).");
+        }
+    </script>
+</html>

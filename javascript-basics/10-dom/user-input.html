@@ -1,0 +1,26 @@
+<html>
+    <head><title>User input demo</title></head>
+    <body>
+        <h2>User Input Demo</h2>
+
+        <h3>User Name: <input id="txtUserId" placeholder="Enter your Username">
+        <br><br>   
+        Password: <input id="txtPwd" type="password" placeholder="Enter your Password">
+        </h3>
+        <br><button id="btnLogin" onclick="authenticateUser()">Login</button>
+        
+    </body>
+
+    <script type="text/javascript">
+        
+        function authenticateUser() {
+            var userName = document.getElementById("txtUserId").value;
+            var password = document.getElementById("txtPwd").value;
+            var result = (userName == password) ? true : false;
+            if(result == true)
+                alert("MATCH !");
+            else
+                alert("BOTH DONT MATCH");
+        }
+    </script>
+</html>

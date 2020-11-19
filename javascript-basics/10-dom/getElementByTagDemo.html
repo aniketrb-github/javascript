@@ -1,0 +1,41 @@
+<html>
+	<head><title>Get Element by TagName Demo</title></head>
+	<body>
+
+        <p>Paragraph 1</p><br>
+        <p>Paragraph 2</p><br>
+        <p>Paragraph 3</p><br>
+        <button id="btnParaFontChange" onclick="btnChangeParaFont()">Change Font</button><br><br>
+
+        <a href="Link 1">Link 1</a><br>
+        <a href="Link 2">Link 2</a><br>
+        <a href="Link 3">Link 3</a><br>
+        <button id="btnAnchorBold" onclick="btnAnchorBold()">Change to Bold</button>
+
+    </body>	
+		
+    <script type="text/javascript">
+        
+        function btnChangeParaFont() {
+            var para = document.getElementsByTagName("p");
+            
+            for(var count=0; count<para.length; count++) {
+                para[count].style.fontSize = 23;
+                para[count].style.color = "red";
+                para[count].style.fontWeight = "bold";
+                para[count].style.fontStyle = "italic";
+            }                        
+        }
+
+        function btnAnchorBold() {
+            var anchor = document.getElementsByTagName("a");
+            
+            for(var count=0; count<anchor.length; count++) {
+                anchor[count].style.fontSize = 23;
+                anchor[count].style.color = "cyan";
+                anchor[count].style.fontWeight = "bold";
+                anchor[count].style.fontStyle = "italic";
+            }
+        }
+	</script>
+</html>

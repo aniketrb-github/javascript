@@ -1,0 +1,43 @@
+<html>
+	<head>
+	<title>Basic Animation Part - 2 (Zoom In and Out)</title>
+	</head>
+    
+    <body>
+        <img src="\diwali-pics\ninja.jpg" id="imgId" width="200px" onmouseover="increase()" onmouseout="decrease()">
+    </body>
+    
+    <script type="text/javascript">
+        var difference = 2;
+        var imgId = document.getElementById("imgId");
+        var intervalId = 0;
+        var width = 200;
+
+        function increase() {
+            intervalId = setInterval(zoomIn, 20);
+        }
+
+        function zoomIn() {
+            if(width < 500) {
+                width = width + difference;
+                imgId.style.width = width;
+            } else {
+                clearInterval(intervalId);
+            }
+        }
+
+        function decrease() {
+            intervalId = setInterval(zoomOut, 20);
+        }
+
+        function zoomOut() {
+            if(width > 200) {
+                width = width - difference;
+                imgId.style.width = width;
+            } else {
+                clearInterval(intervalId);
+            }
+        }
+    </script>
+
+</html>

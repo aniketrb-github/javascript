@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Objects in JavaScript</title>
+    </head>
+    <body></body>
+    
+    <script type="text/javascript">
+        var cellPhone = {
+            company : "One Plus Org.",
+            name : "One Plus 6",
+            color : "Midnight Black",
+            camera : 48,
+            ram : 12,
+            hdd : 128,
+            operatingSystem : "Andriod lollipop",
+ 
+            displayFeatures : function () {
+                document.write("<br>Company: "+cellPhone.company+"<br>Name: "+cellPhone.name+"<br>Color: "+cellPhone.color+"<br>Camera: "+cellPhone.camera
+                +"<br>RAM: "+cellPhone.ram+"<br>HDD: "+cellPhone.hdd+"<br>OS: "+cellPhone.operatingSystem);
+            }
+        }
+        // Here I have added a new field to the class template
+        cellPhone.price = 24000;
+        // Also able to change the value of an existing field
+        cellPhone.hdd = 256;
+        cellPhone.displayFeatures();
+        document.write("<br>Price: "+cellPhone.price );
+        document.write("<br>Price is type of : "+typeof(cellPhone.price));
+
+         // Objects Part-2 
+         var jetName = "Rafale";
+         var squadName = new String("Golden Arrows");
+         document.write("<br><br>JetName: "+jetName+"<br>SquadName: "+squadName);
+         document.write("<br>JetName is typeOf: '"+typeof(jetName)+"' primitive type");
+         document.write("<br>SquadName string is typeOf: '"+typeof(squadName)+"' type");
+    </script>
+    
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<head><title>GetElementByClassName Demo</title></head>
+	<body>
+        <p id="p1" class="intro">Paragraph 1</p>
+        <a class="intro" href="Link 1">Link 1</a><br>
+        <a class="intro" href="Link 2">Link 2</a>
+        <br><br>        
+        <p id="p1" class="section1">Paragraph 2</p>
+        <p id="p2" class="section1">Paragraph 2</p>
+
+        <button id="btnSubmit" onclick="changeStyling()" >Submit</button>
+    </body>	
+		
+    <script type="text/javascript">
+
+        // My need was to change the styling for all the HTML elements belonging to a particular class.
+        // So we can associate HTML elements with class attribute & use the getElementsByClassName(className) to do set of operations of the collection of html elements
+		function changeStyling() {
+            var intro = document.getElementsByClassName("intro");
+            for(var cn = 0; cn < intro.length; cn++) {
+                intro[cn].style.color = "RED";
+            }
+        }
+	</script>
+</html>

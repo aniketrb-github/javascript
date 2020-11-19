@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Arrays in JavaScript</title>
+        <script type="text/javascript">
+
+            // Method-1 to create an array (recommended)
+            var names = ["Sam", "Ram", "Molly", "Arjun", 1233, false];
+            for(var count = 0; count < names.length; count++) {
+                document.write(names[count]+"<br>");
+            }
+
+            // Method-2 to create an array
+            var fruits = new Array("Apple", "Mango", "Banana", 212, true);
+            fruits.push("Papaya");
+            counter = 0;
+            while(counter < fruits.length) {
+                document.write("<br>"+fruits[counter]);
+                counter++;
+            }
+
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+	<head>
+	<title>Basic Animation - Fade in & Fade out Demo</title>
+	</head>
+    
+    <body>
+        <button id="fadeIn" onclick="fadeIn()" >Fade In</button><br><br><br>
+
+        <img id="imgId" src="\diwali-pics\ninja.jpg" width="300px"><br><br><br>
+
+        <button id="fadeIn" onclick="fadeOut()">Fade Out</button><br><br>
+
+        <button id="stopId" onclick="stop()">Stop Animation</button>
+    </body>
+    
+    <script type="text/javascript">
+        var intervalId = 0;
+        var opacity = 0;
+        var imgId = document.getElementById("imgId");
+
+        function fadeOut() {
+            intervalId = window.setInterval(hide, 200);
+        }
+
+       function hide() {
+            opacity = Number ( window.getComputedStyle(imgId).getPropertyValue("opacity") );
+            if( opacity > 0 ) {
+                opacity = opacity - 0.1;
+                imgId.style.opacity = opacity;
+            } else
+                window.clearInterval(intervalId);
+
+            console.log("opacity: "+opacity);
+        }
+
+        function fadeIn() {
+            intervalId = window.setInterval(unHide, 200);
+        }
+
+        function unHide() {
+            opacity = Number ( window.getComputedStyle(imgId).getPropertyValue("opacity") );
+            if( opacity < 1 ) {
+                opacity = opacity + 0.1;
+                imgId.style.opacity = opacity;
+            } else
+                window.clearInterval(intervalId);
+            
+            console.log("opacity: "+opacity);
+        }
+
+        function stop() {
+            window.clearInterval(intervalId);
+        }
+    </script>
+
+</html>

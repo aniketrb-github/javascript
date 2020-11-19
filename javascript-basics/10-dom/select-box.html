@@ -1,0 +1,21 @@
+<html>
+	<head><title>Select Box/Drop down box emo</title></head>
+	<body>
+
+        <select id="selectBox">
+            <option value="Cristiano Ronaldo - Real Madrid">Cristiano Ronaldo - Real Madrid</option>
+            <option value="Lionel Messi - Barcalona">Lionel Messi - Barcalona</option>
+            <option value="Wayne Rooney - Manchester United">Wayne Rooney - Manchester United</option>
+        </select> <br><br>
+        <button id="btnSubmit" onclick="printValue()" >Submit</button>
+    </body>	
+		
+    <script type="text/javascript">
+
+            function printValue() {
+                var selectBox = document.getElementById("selectBox");
+                alert(selectBox.options[selectBox.selectedIndex].value);
+            }
+            
+	</script>
+</html>

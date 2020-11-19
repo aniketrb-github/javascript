@@ -1,0 +1,30 @@
+<html>
+    <head><title>If-else control statements</title></head>
+    <body>
+        <script type="text/javascript">
+        var num = -4; 
+        var result = (num%2==0)?"EVEN":"ODD";
+        // Find if number is Even or Odd
+        document.write("<h1>The number: "+num+" is: "+result+"</h1>");
+
+        // Find if the number is postive, negative or 0
+        if(num>0)
+            result = "POSITIVE";
+        else if(num<0)
+            result = "NEGATIVE";
+        else 
+            result = "NEUTRAL/ZERO";
+
+        document.write("<br><h1>The number: "+num+" is: "+result+"</h1>");
+
+        // Find out if the number is Postive and Even
+        if(num>0 && num%2==0)
+            document.write("<br><h1>Number is Positive & Even.</h1");
+        else if(num>0 && num%2!=0)
+            document.write("<br><h1>Number is Positive but is an Odd number.</h1");
+        else
+            document.write("<br><h1>Number is negative.</h1");
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+	<head>
+	<title>Form validations</title>
+	    <script type="text/javascript">
+            function authenticateUser() {
+                var uname = document.getElementById("uname");
+                var pwd = document.getElementById("pass");
+
+                if(uname.value.trim() == "") {
+                    //alert("Blank user name not allowed!");
+                    uname.style.border = "solid 3px red";
+                    document.getElementById("lblUid").style.visibility = "visible";
+                    return false;
+                } else if( pwd.value.trim() == "") {
+                    // alert("Blank password not allowed!");
+                    pwd .style.border = "solid 3px red";
+                    document.getElementById("lblPwd1").style.visibility = "visible";
+                    return false;
+                } else if(pwd.value.trim().length <= 5 ) {
+                    // alert("Password too short!");
+                    document.getElementById("lblPwd2").style.visibility = "visible";
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+	    </script>
+	</head>
+    
+    <body>
+		<form onsubmit="return authenticateUser()" action="message.html" >
+            <input id="uname" placeholder="Username" type="text">
+            <label id="lblUid" style="color: red; visibility: hidden;">Invalid Username</label><br><br>
+            
+            <input id="pass" placeholder="Password" type="password">
+            <label id="lblPwd1" style="color: red; visibility: hidden;">Invalid Password</label>
+            <label id="lblPwd2" style="color: red; visibility: hidden;">Password too short!</label><br><br>
+            <button id="btnLogin" type="submit">Login</button>
+        </form>
+	</body>
+</html>
