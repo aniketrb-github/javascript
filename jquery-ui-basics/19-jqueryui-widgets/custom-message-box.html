@@ -1,0 +1,70 @@
+<html>
+	<head>
+        <title>Accordion Widget Demo</title>
+        <!-- Importing the "jQuery UI" into our webpage -->
+        <!-- Importing the "jQuery UI" into our webpage -->
+        <link rel="stylesheet" href="/jquery-library/jquery-ui/jquery-ui.theme.css"/>
+        <link rel="stylesheet" href="/jquery-library/jquery-ui/jquery-ui.structure.css"/>
+        <link rel="stylesheet" href="/jquery-library/css/style.css"/>
+	</head>
+    
+    <body>
+        <h2>Message Box in jQuery UI</h2>
+        <div id="firstDiv" class="myDivs">
+            <h3>Welcome to jQuery & JavaScript learning</h3>
+            <br>
+            <button id="btnDisplayMessageBox">Display Message Box</button>            
+        </div>
+        <br>
+        <div id="msgBox" title="Default Message Box Title" class="myDivs">
+            <h3>This is a Dummy Title</h3>
+            <img src="/pics/jqueryui-pic.png" width="100px" >
+            <br><br>
+            <button>Close</button>
+        </div>
+    </body>
+    
+    <!-- imported jQuery Core Library MAIN/PARENT
+    <script src="/jquery/jquery-lib.js" type="text/javascript"></script>--> 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- imported jQuery U.I Library SUBMAIN/CHILD -->
+    <script src="/jquery-library/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){            
+
+            $("#btnDisplayMessageBox").click(function(){
+            
+                $("#msgBox").dialog({
+                    title: "Custom Message Box Title",  // Header of the alert pop-up
+                    draggable: true,    // defines if you can drag the pop-up or not
+                    resizable: true,    // allows us to resize the pop-up
+                    height: 300,
+                    width: 380,
+                    modal: true,        // blocks the background access & makes the pop-up as a mandatory
+                    
+                    // below are the custom buttons with custom icons & text(name-value) pairs
+                    buttons: [
+                        {
+                            text: "Close",
+                            icon: "ui-icon-close", // | icons source: https://api.jqueryui.com/theming/icons/
+                            click: function() {
+                                $(this).dialog("close");                                
+                            }
+                        },
+                        {
+                            text: "OK",
+                            icon: "ui-icon-check",
+                            click: function() {
+                                alert("OK is OKAY too! :p")
+                            }
+                        }
+                    ]
+                });
+                
+            });
+
+
+        });
+    </script>
+</html>

@@ -1,0 +1,82 @@
+<html>
+	<head>
+        <title>Accordion Widget Demo</title>
+        <!-- Importing the "jQuery UI" into our webpage -->
+        <link rel="stylesheet" href="/jquery-library/jquery-ui/jquery-ui.theme.css"/>
+        <link rel="stylesheet" href="/jquery-library/jquery-ui/jquery-ui.structure.css"/>
+        <link rel="stylesheet" href="/jquery-library/css/style.css"/>
+	</head>
+    
+    <body>
+        <div id="indexDiv">
+
+            
+                <h2>Selectors in jQuery</h2>
+                    <p>Dot(.) selector is used to select html elements by their class attribute.<br>
+                    Hash(#) selector is for selecting unique html elements by their ID.</p>            
+
+                <h2>Animation Effects in jQuery</h2>
+                <p>Fade Toggle effect is a combination of Fade In & Fade Out effect.<br>
+                Similarly, Slide Toggle is a combo of slideUp & slideDown effect.<br>
+                Whereas the toggle() effect is th combo of show() & hide() effect.</p>
+
+                <h2>DOM Manipulation using jQuery</h2>
+                <p>We can use following set of methods to manipulate a webpage using jQuery.<br>                                      
+                        - html()<br>
+                        - attr()<br>                    
+                        - css()<br>                   
+                        - text()<br>                  
+                        - append()<br>                 
+                        - prepend()<br>                 
+                        - after()<br>                    
+                        - before()<br>                   
+                        - remove()<br> 
+                        - empty()<br>                    
+                        - addClass()<br> 
+                        - removeClass()<br>                    
+                        - toggleClass()<br>                   
+                </p>            
+            
+                <h2>Events in jQuery</h2>
+                <p>Following are few events in jQuery<br>
+                    > dblclick(functionRef)<br>
+                    > mouseenter(functionRef)<br>
+                    > mouseleave(functionRef)<br>
+                    > hover(jQueryEffect1, jQueryEffect2)<br>
+                </p>           
+            
+                <h2>Introduction to jQuery U.I</h2>    
+                <p>Download jQuery U.I from: <a href="https://jqueryui.com/">jQuery UI Official</a> <br>
+                Following are the custom items that one can use from JQUERY USER INTERFACE<br>                
+                    > Date Picker<br>
+                    > Accordion widget<br>
+                    > Custom message pop-up<br>
+                    > Auto-complete widget<br>
+                </p>
+            
+        </div>
+    </body>
+    
+    <!-- imported jQuery Core Library MAIN/PARENT -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- imported jQuery U.I Library SUBMAIN/CHILD -->
+    <script src="/jquery-library/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    
+        $(document).ready(function(){            
+
+            $("#indexDiv").accordion({
+                collapsible: true,  // the selected item will collapse
+                event: "click",     // these are different ways or effects to open the blocks ex: "mouseover"
+                animate: 400,       // the time required to open the blocks
+                active: 1,          // indexing is from 0
+                heightStyle: true,  // making the blocks height dynamic in nature & not static
+                icons: {
+                    header:"ui-icon-plusthick",         // the in-active/collapsed tab
+                    activeHeader:"ui-icon-minusthick"   // the active tab | we can get icons from https://api.jqueryui.com/theming/icons/
+                }
+            });
+        });
+    </script>
+</html>

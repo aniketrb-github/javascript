@@ -1,0 +1,45 @@
+<html>
+	<head>
+        <title>Accordion Widget Demo</title>
+        <!-- Importing the "jQuery UI" into our webpage -->
+        <link rel="stylesheet" href="/jquery-library/jquery-ui/jquery-ui.theme.css"/>
+        <link rel="stylesheet" href="/jquery-library/jquery-ui/jquery-ui.structure.css"/>
+        <link rel="stylesheet" href="/jquery-library/css/style.css"/>
+	</head>
+    
+    <body>
+        <h1>Interactions in jQuery UI</h2><br>
+        <h2>Draggable interaction</h2>
+        <div style="border: 2px solid red;">
+            <div class="cube">
+                <h3>CUBE-1</h3>    
+            </div>
+            <div class="cube">
+                <h3>CUBE-2</h3>    
+            </div>
+        </div>
+
+    </body>
+    
+    <!-- imported jQuery Core Library MAIN/PARENT -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- imported jQuery U.I Library SUBMAIN/CHILD -->
+    <script src="/jquery-library/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){            
+
+            // source: https://api.jqueryui.com/draggable/
+            $(".cube").draggable({
+                axis: "x",
+                distane: 50,
+                cursor: "grabbing",
+                opacity: 0.5,
+                containment: "parent",
+                //grid: [300, 300],
+                snap: true,
+                snapTolerenace: 100
+            });
+        });
+    </script>
+</html>
