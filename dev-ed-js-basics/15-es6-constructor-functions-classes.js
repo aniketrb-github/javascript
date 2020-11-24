@@ -1,5 +1,5 @@
 
-// ----------- Old way - Constructor Functions ----------- 
+// ----------- Constructor Functions ----------- 
 function Person(name, age, country) {
     this.name = name;
     this.age = age;
@@ -7,59 +7,35 @@ function Person(name, age, country) {
 }
 
 // a method of Person class
-Person.prototype.printName = function(version) {
-    console.log("Name: "+this.name+" from "+version+" version");
+Person.prototype.printName = function() {
+    console.log("Name: "+this.name);
 };
 
-var Ed = new Person("Ed", 23, "Denmark");
+// a method of Person class
+Person.prototype.printCountry = function() {
+    console.log("Country: "+this.country);
+};
 
-Ed.printName("OLD JS VANILLA");
+var Edwin = new Person("Edwin", 23, "Denmark");
+Edwin.printName();
+Edwin.printCountry();
 
-// function Employee -> (extends) funciton Person
+// ctor function Employee (extends) ctor function Person
 function Employee(empId, designation, contactNum, name, age, country) { // add fields of Person here
-    Person.call(this, name, age, country);  // this entends the Person inside Employee
-    this.empId;
-    this.designation;
-    this.contactNum;
-    // we need to copy paste the fields of Person to Employee param list
+    Person.call(this, name, age, country);  // constructor Employee extends constructor Person
+    this.empId = empId;
+    this.designatio = designation;
+    this.contactNum = contactNum;
+    // we need to copy paste the fields of Person to Employee param list explicitly
 }
-// this inherits all the functions from Person to Employee
+// this inherits all the methods from Person to Employee
 Employee.prototype = Object.create(Person.prototype);
+// a method of Employee class
+Employee.prototype.printEmpDetails = function() {
+    console.log("name: "+this.name+"| empId: "+this.empId+" | designation: "+this.designation+" | contactNum: "+this.contactNum+"| " );
+};
 
-const emp = new Employee("P14S63XZ", "Manager", 537021987074, "Roger", 23, "Ireland");
-
-emp.printName("OLD JS VANILLA");
-
-// ----------- ES6 NEW WAY ----------- 
-
-class SoccerClub {
-    constructor (numberOfPlayers, division, version) {
-        this.numberOfPlayers = numberOfPlayers;
-        this.division = division;           
-        this.version = version;
-    }
-
-    printClubDetails() {
-        console.log(`A club can have ${this.numberOfPlayers} players in the ${this.division} division of ${this.version} version.`);
-    }
-}
-
-// Object creation by New ES6 way
-const soccerClub = new SoccerClub("30", "Second", "ES6 NEW JS");
-soccerClub.printClubDetails();
-
-class DynamitesSC extends SoccerClub {
-    constructor(clubName, numberOfPlayers, division, version) {
-        super(numberOfPlayers, division, version);
-        this.clubName = clubName;         
-    }
-
-    printDynamitesDetails(version) {
-        console.log(`Clubname: ${this.clubName} from ${this.version} version.`);
-    }
-}
-
-// Object creation by New ES6 way
-const dynamitesSC = new DynamitesSC("Dynamites S.C.", 30, "Second", "ES6 NEW JS");
-dynamitesSC.printDynamitesDetails();
-dynamitesSC.printClubDetails();
+const emp = new Employee("P14S63XZ", "Manager", 123456, "Roger", 23, "Ireland");
+emp.printName();
+emp.printCountry();
+emp.printEmpDetails();
