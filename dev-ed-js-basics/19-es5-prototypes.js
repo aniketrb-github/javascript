@@ -7,7 +7,7 @@ function Book(name, year, author, count) {
 
 // Syntax to create a function constructor | this is recommended approach
 Book.prototype.getSummary = function(){
-    console.log(`${this.author} wrote his book no. ${this.count} named ${this.name} in year ${this.year}!`);
+    return `${this.author} wrote his book no. ${this.count} named ${this.name} in year ${this.year}!`;
 }
 
 // object creation
@@ -29,4 +29,3 @@ Book.prototype.newUpdateRelease = function(yearOfRelease){
 shadowed.newUpdateRelease(2025);
 console.log(shadowed);
 console.log(theComeBack);
-
